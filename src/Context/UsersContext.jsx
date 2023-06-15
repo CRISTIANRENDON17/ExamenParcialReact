@@ -9,11 +9,7 @@ const UsersProvider = ({ children }) => {
 	const [players, setPlayers] = useState({name:'',id:''});
     const [deckofcard, setDeckofcard] = useState([]);
     const [code, setCode] = useState('');
-/*  const [deckofcard2, setDeckofcard2] = useState([]);
-	const [deckofcardUse, setDeckofcardUse] = useState([]);
-	const [deckofcardUse2, setDeckofcardUse2] = useState([]);
-    const [win, setWin] = useState({win:false,name:'Empate'});
-    */
+
 	useEffect(() => {
 		const query = async () => {
             const urlId = `https://deckofcardsapi.com/api/deck/new/`;
@@ -24,7 +20,8 @@ const UsersProvider = ({ children }) => {
 			const response = await axios(url);
 			const cardsData = response.data.cards;
 			setDeckofcard(cardsData);
-            console.log(players);
+          //  console.log(players);
+         //   console.log(deckofcard);
 		};
 		query();	
 	},[]);
